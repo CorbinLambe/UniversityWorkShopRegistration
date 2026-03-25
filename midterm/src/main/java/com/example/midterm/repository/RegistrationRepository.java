@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface RegistrationRepository extends JpaRepository<Registration, Long> {
     List<Registration> findByUser(User user);
-    List<Registration> findByWorkShop(Workshop workshop);
+    List<Registration> findByWorkshop(Workshop workshop);
     Boolean existsByUserAndWorkshop(User user, Workshop workshop);
     Optional<Registration> findByUserAndWorkshop(User user, Workshop workshop);
 
