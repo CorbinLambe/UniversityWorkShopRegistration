@@ -10,14 +10,12 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user_id;
-    @Column(unique = true)
+    private User user;
     @ManyToOne
     @JoinColumn(name = "workshop_id", nullable = false)
-    private Workshop workshop_id;
+    private Workshop workshop;
     private String status;
     LocalDateTime created_at;
     LocalDateTime cancelled_at;
@@ -27,8 +25,8 @@ public class Registration {
         this.cancelled_at = cancelled_at;
         this.created_at = created_at;
         this.status = status;
-        this.workshop_id = workshop_id;
-        this.user_id = user_id;
+        this.workshop = workshop_id;
+        this.user = user_id;
     }
 
     public Registration() {
@@ -67,27 +65,27 @@ public class Registration {
     }
 
     public Workshop getWorkshop_id() {
-        return workshop_id;
+        return workshop;
     }
 
     public void setWorkshop_id(Workshop workshop_id) {
-        this.workshop_id = workshop_id;
+        this.workshop = workshop_id;
     }
 
     public User getUser_id() {
-        return user_id;
+        return user;
     }
 
     public void setUser_id(User user_id) {
-        this.user_id = user_id;
+        this.user = user_id;
     }
 
     @Override
     public String toString() {
         return "Registration{" +
                 "id=" + id +
-                ", user_id=" + user_id +
-                ", workshop_id=" + workshop_id +
+                ", user_id=" + user +
+                ", workshop_id=" + workshop +
                 ", status='" + status + '\'' +
                 ", created_at=" + created_at +
                 ", cancelled_at=" + cancelled_at +
