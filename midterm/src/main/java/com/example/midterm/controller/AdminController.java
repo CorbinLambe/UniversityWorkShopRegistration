@@ -40,6 +40,6 @@ public class AdminController {
     @GetMapping("/workshop/{id}/registration")
     public ResponseEntity<List<Registration>> getWorkshopRegistration(@PathVariable Long id){
         Workshop workshop = workshopService.getWorkshopById(id);
-        return ResponseEntity.ok(registrationRepository.findByWorkShop(workshop));
+        return ResponseEntity.ok(registrationRepository.findByWorkshop(workshop));
     }
 }
