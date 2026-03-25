@@ -22,7 +22,7 @@ public class RegistrationController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/workshop/{id}/registartion")
+    @PostMapping("/workshop/{id}/registration")
     public ResponseEntity<Registration> registerForWorkshop(
             @PathVariable Long id,
             @RequestHeader("X-User-Id") Long userId){
